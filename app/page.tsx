@@ -3,6 +3,14 @@ import { SampleReading } from "./components/sample-reading";
 import { SiteShell } from "./components/site-shell";
 import { ZipLookup } from "./components/zip-lookup";
 
+const comparison = [
+  ["Borrower & collateral", "Location & economic outlook"],
+  ["FICO, LTV and DTI", "Default, prepayment and home value outlook"],
+  ["Primarily point-in-time assessment", "Forward-looking risk intelligence"],
+  ["Borrower financial characteristics", "Local economic and housing conditions"],
+  ["Traditional credit risk assessment", "Life-of-loan geographic risk assessment"],
+];
+
 const measures = [
   {
     index: "01",
@@ -95,51 +103,49 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="problem" className="mx-auto max-w-[1120px] px-5 py-20 sm:px-8 sm:py-28">
+      <section id="advantage" className="mx-auto max-w-[1120px] px-5 py-20 sm:px-8 sm:py-28">
         <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-muted">
-          The problem
+          The ForeScore advantage
         </p>
-        <h2 className="mt-5 max-w-4xl font-serif text-4xl leading-[1.12] tracking-[-0.02em] text-balance sm:text-5xl">
-          FICO, LTV, and DTI are backward-looking and borrower-centric.
+        <h2 className="mt-5 max-w-4xl font-serif text-4xl leading-[1.12] tracking-[-0.02em] sm:text-5xl">
+          Your model knows the borrower.
+          <br />
+          <span className="italic">ForeScore knows the market.</span>
         </h2>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">
-          UFA is forward-looking and location-centric, and it has 35+ years of research
-          behind it. Credit scores tell a lender about the borrower. ForeScore tells them
-          about the collateral and the local economy that will drive defaults, prepayments,
-          and home values over the life of the loan.
+          Traditional underwriting metrics capture borrower creditworthiness and collateral
+          leverage. But they don’t fully capture where local housing markets and economic
+          conditions are headed.
         </p>
         <p className="mt-6 max-w-2xl text-lg leading-8">
-          Credit scores describe the borrower on the day the loan closed. They don’t tell
-          you what happens to the house, the neighborhood, or the local economy over the
-          next ten years. That’s where most mortgage losses come from.
+          Employment shocks, housing supply, migration patterns and home price cycles vary
+          significantly across local markets. Historical data reveals where risk has been.
+          ForeScore predicts where it is going.
         </p>
-        <div className="mt-12 grid border border-line md:grid-cols-2">
-          <div className="border-b border-line p-7 sm:p-10 md:border-b-0 md:border-r">
-            <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-muted">
-              Borrower
-            </p>
-            <p className="mt-5 font-serif text-3xl tracking-tight sm:text-4xl">
-              The day the loan closed
-            </p>
-            <ul className="mt-8 space-y-2 text-sm leading-6 text-muted">
-              <li>FICO, LTV, and DTI</li>
-              <li>Backward-looking</li>
-              <li>Describes the person who borrowed</li>
-            </ul>
-          </div>
-          <div className="bg-foreground p-7 text-background sm:p-10">
-            <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-background/60">
-              Place
-            </p>
-            <p className="mt-5 font-serif text-3xl tracking-tight sm:text-4xl">
-              The life of the loan
-            </p>
-            <ul className="mt-8 space-y-2 text-sm leading-6 text-background/75">
-              <li>Default, prepayment, and home value</li>
-              <li>Forward-looking</li>
-              <li>Describes the collateral and the local economy</li>
-            </ul>
-          </div>
+        <div className="mt-12 border border-line md:grid md:grid-cols-2">
+          <p className="border-b border-line px-7 py-6 text-[11px] font-medium uppercase tracking-[0.16em] text-muted sm:px-10 md:border-r">
+            Traditional underwriting
+          </p>
+          <p className="border-b border-line bg-foreground px-7 py-6 text-[11px] font-medium uppercase tracking-[0.16em] text-background/60 sm:px-10 md:border-background/20">
+            ForeScore intelligence
+          </p>
+          {comparison.map(([traditional, forescore], index) => {
+            const last = index === comparison.length - 1;
+            return (
+              <div key={traditional} className="contents">
+                <p
+                  className={`border-line px-7 py-4 text-base leading-7 sm:px-10 md:border-r ${last ? "" : "border-b"}`}
+                >
+                  {traditional}
+                </p>
+                <p
+                  className={`bg-foreground px-7 py-4 text-base leading-7 text-background/85 sm:px-10 ${last ? "" : "border-b border-line md:border-background/20"}`}
+                >
+                  {forescore}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </section>
 
