@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { DefaultMap } from "./components/default-map";
 import { SampleReading } from "./components/sample-reading";
 import { SiteShell } from "./components/site-shell";
 import { ZipLookup } from "./components/zip-lookup";
@@ -146,6 +147,24 @@ export default function Home() {
               </div>
             );
           })}
+        </div>
+      </section>
+
+      <section id="map" className="border-t border-line">
+        <div className="mx-auto max-w-[1120px] px-5 py-20 sm:px-8 sm:py-28">
+          <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-muted">
+            Default outlook
+          </p>
+          <div className="mt-5 grid items-end gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
+            <h2 className="max-w-xl font-serif text-4xl leading-[1.12] tracking-[-0.02em] text-balance sm:text-5xl">
+              Where default risk sits.
+            </h2>
+            <p className="max-w-md text-lg leading-8 text-muted lg:justify-self-end">
+              ForeScore default by state, indexed to 100. Color runs from very low, below
+              70, to very high, 150 and above.
+            </p>
+          </div>
+          <DefaultMap />
         </div>
       </section>
 
