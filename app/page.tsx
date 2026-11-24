@@ -32,7 +32,7 @@ const proof = [
   },
   {
     label: "2006",
-    body: "Used by a major bond rating firm in its credit risk ratings since 2006.",
+    body: "Embedded in Fitch Ratings’ credit risk ratings since 2006.",
   },
 ];
 
@@ -197,6 +197,42 @@ export default function Home() {
               </li>
             ))}
           </ol>
+          <figure className="mt-16 grid border border-line lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
+            <figcaption className="border-b border-line p-7 sm:p-10 lg:border-b-0 lg:border-r">
+              <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-muted">
+                Fitch Ratings
+              </p>
+              <h3 className="mt-5 font-serif text-3xl leading-[1.15] tracking-tight text-balance sm:text-4xl">
+                Embedded in Fitch Ratings.
+              </h3>
+              <div className="mt-6 space-y-4 text-base leading-7 text-muted">
+                <p>
+                  Through its collaboration with Fitch Ratings, ForeScore was developed to
+                  provide standardized metrics that their life-of-loan default model demanded.
+                </p>
+                <p>
+                  That relationship shaped the product — translating three decades of mortgage
+                  research into a practical metric for measuring the local economic components
+                  of future mortgage risk.
+                </p>
+                <p>It is now available to institutional investors for the first time.</p>
+              </div>
+            </figcaption>
+            <blockquote className="flex flex-col justify-between bg-foreground px-7 py-8 text-background sm:px-10 sm:py-10 lg:px-12 lg:py-12">
+              <p className="font-serif text-[1.55rem] italic leading-[1.38] tracking-[-0.02em] text-balance sm:text-[1.8rem]">
+                “UFA has been a strategic partner to Fitch Ratings for over 20 years. In
+                addition to providing ForeScores for default, they have consistently
+                demonstrated transparency and a solutions-oriented approach. Their insights
+                have helped inform our responses to residential mortgage market changes.”
+              </p>
+              <footer className="mt-10 border-t border-background/20 pt-5">
+                <p className="text-[11px] font-medium uppercase tracking-[0.18em]">G. Bailey</p>
+                <p className="mt-1 text-[11px] uppercase tracking-[0.18em] text-background/55">
+                  Fitch Ratings
+                </p>
+              </footer>
+            </blockquote>
+          </figure>
         </div>
       </section>
 
