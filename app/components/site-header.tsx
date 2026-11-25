@@ -1,15 +1,17 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const links = [
-  { href: "/#measures", label: "Product" },
-  { href: "/#proof", label: "Proof" },
-  { href: "/#clients", label: "Clients" },
+  { href: "/forescore", label: "ForeScore" },
+  { href: "/research", label: "Research" },
+  { href: "/blog", label: "Blog" },
 ];
 
 export function SiteHeader() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -39,7 +41,10 @@ export function SiteHeader() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-foreground/80 transition-colors hover:text-foreground"
+              aria-current={pathname === link.href ? "page" : undefined}
+              className={`text-sm transition-colors hover:text-foreground ${
+                pathname === link.href ? "text-foreground" : "text-foreground/80"
+              }`}
             >
               {link.label}
             </Link>
@@ -87,6 +92,7 @@ export function SiteHeader() {
               <li key={link.href}>
                 <Link
                   href={link.href}
+                  aria-current={pathname === link.href ? "page" : undefined}
                   className="block py-3 text-base"
                   onClick={() => setOpen(false)}
                 >

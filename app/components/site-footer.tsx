@@ -33,6 +33,21 @@ export function SiteFooter() {
           <p className="text-[11px] font-medium uppercase tracking-[0.16em]">ForeScore</p>
           <ul className="mt-3 text-muted">
             <li>
+              <Link className="hover:text-foreground" href="/forescore">
+                ForeScore
+              </Link>
+            </li>
+            <li>
+              <Link className="hover:text-foreground" href="/research">
+                Research
+              </Link>
+            </li>
+            <li>
+              <Link className="hover:text-foreground" href="/blog">
+                Blog
+              </Link>
+            </li>
+            <li>
               <Link className="hover:text-foreground" href="/#lookup">
                 Look up a ZIP code
               </Link>
